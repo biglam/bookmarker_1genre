@@ -1,7 +1,7 @@
 <ul>
   <% @genres.each do |genre| %>
     <li>
-      <%= genre.genre %>
+      <a href="/bookmarks/genre/<%= genre.id %>"><%= genre.genre %></a>
       <form method="post" action="/genres/<%= genre.id %>/delete"> 
       <a href='/genres/<%= genre.id %>/edit'>Edit</a>
       <button>Delete</button>
@@ -9,4 +9,5 @@
     </li>
   <% end %>
   <li><a href="/genres/new">New Genre</a></li>
+
 </ul>

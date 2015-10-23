@@ -6,6 +6,13 @@ get '/bookmarks' do
   erb :'bookmarks/index'
 end
 
+get '/bookmarks/genre/:id' do
+  # @bookmarks = Bookmark.all
+
+  @bookmarks = Bookmark.find_by_genre(params[:id])
+  erb :'bookmarks/index'
+end
+
   get '/bookmarks/new' do
     @bookmark = Bookmark.new()
   erb :'bookmarks/new'

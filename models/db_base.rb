@@ -48,6 +48,12 @@ class DBBase
     self.new(result) if result
   end
 
+  def self.find_by_genre(id)
+    results = run_sql("SELECT * FROM #{table_name} WHERE genre_id = #{sql_sanitize(id, :integer)}")
+    # self.new(result) if result
+    results.map { |result| self.new(result) }
+  end
+
   def self.sql_sanitize(value, type)
     case type
       when :string
