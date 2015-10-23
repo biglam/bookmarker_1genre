@@ -1,0 +1,12 @@
+
+<ul>
+  <% @genres.each do |genre| %>
+    <li>
+      <%= genre.genre %>
+      <form method="post" action="/genres/<%= genre.id %>/delete"> 
+      <a href='/genres/<%= genre.id %>/edit'>Edit</a>
+      <button>Delete</button>
+      </form>
+    </li>
+  <% end %>
+</ul>
