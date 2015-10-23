@@ -1,0 +1,22 @@
+
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>URL</th>
+    <th>Genre</th>
+    <th>Functions</th>
+  </tr>
+  <% @bookmarks.each do |bookmark| %>
+  <tr>
+    <td><%= bookmark.title %></td>
+    <td><%= bookmark.url %></td>
+
+    <td><%= Genre.find(bookmark.genre_id).genre %></td>
+    <td> <form method="post" action="/bookmarks/<%= bookmark.id %>/delete"> 
+      <a href='/bookmarks/<%= bookmark.id %>/edit'>Edit</a>
+      <button>Delete</button>
+    </form></td>
+  </tr>
+  <% end %>
+</table>

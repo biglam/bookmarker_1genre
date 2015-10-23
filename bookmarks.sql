@@ -6,7 +6,8 @@ CREATE TABLE bookmarks (
   url varchar(255),
   title varchar(255),
   details text,
-  genre_id serial8
+  genre_id serial8,
+  genre varchar(255)
 );
 
 CREATE TABLE genres (
