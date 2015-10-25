@@ -3,4 +3,10 @@
 <label for="url">URL: </label>
 <input id="url" name='bookmarks[url]' type='url' value='<%= @bookmark.url %>'>
 <label for="genre">Genre: </label>
-<input id="genre" name='bookmarks[genre_id]' type='text' value='genre ids'> 
+<!-- <input id="genre" name='bookmarks[genre_id]' type='text' value='genre ids'> 
+ -->
+ <select name="bookmarks[genre_id]" >
+<% Genre.all.each do |genre| %>
+  <option value="<%= genre.id %>"><%= genre.genre %></option>
+  <% end %>
+  </select>

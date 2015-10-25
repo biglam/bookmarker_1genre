@@ -1,0 +1,7 @@
+
+<h2><%= @bookmarks.title %></h2>
+<strong><%= @bookmarks.url %></strong>
+<p><%= @bookmarks.details %></p>
+
+<strong>Genre: <%= Genre.find(@bookmarks.genre_id).genre %></strong>
+<p><a href="/bookmarks">Back</a></p>

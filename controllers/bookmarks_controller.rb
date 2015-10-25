@@ -5,18 +5,23 @@ get '/bookmarks' do
   @bookmarks = Bookmark.all
   erb :'bookmarks/index'
 end
+get '/bookmarks/new' do
+  @bookmark = Bookmark.new()
+erb :'bookmarks/new'
+end
+
+get '/bookmarks/:id' do
+  @bookmarks = Bookmark.find(params[:id])
+  erb :'bookmarks/display'
+end
 
 get '/bookmarks/genre/:id' do
   # @bookmarks = Bookmark.all
-
   @bookmarks = Bookmark.find_by_genre(params[:id])
   erb :'bookmarks/index'
 end
 
-  get '/bookmarks/new' do
-    @bookmark = Bookmark.new()
-  erb :'bookmarks/new'
-  end
+ 
 
   get '/bookmarks/:id/edit' do
     @bookmark = Bookmark.find(params[:id])
