@@ -1,13 +1,14 @@
-<ul>
+<p>Select a genre to browse sites</p>
+<table>
   <% @genres.each do |genre| %>
-    <li>
-      <a href="/bookmarks/genre/<%= genre.id %>"><%= genre.genre %></a>
-      <form method="post" action="/genres/<%= genre.id %>/delete"> 
-      <a href='/genres/<%= genre.id %>/edit'>Edit</a>
-      <button>Delete</button>
-      </form>
-    </li>
+   <tr><td>
+      <a href="/bookmarks/genre/<%= genre.id %>"><%= genre.genre %></a></td>
+      <td>
+      <a href='/genres/<%= genre.id %>/edit'>Edit</a></td>
+      <td><form method="post" action="/genres/<%= genre.id %>/delete"> <button>Delete</button>
+      </form></td>
+    </tr>
   <% end %>
-  <li><a href="/genres/new">New Genre</a></li>
+  <tr><td><a href="/genres/new">New Genre</a></td></tr>
 
-</ul>
+</table>

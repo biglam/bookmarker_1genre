@@ -1,7 +1,31 @@
 body {
+  background-color: blue;
+  font-family: verdana, arial, sans-serif;
+}
 
+div.content {
+  background-color: #66ccff;
+  border: 5px solid cyan;
+  box-shadow: 10px 10px 5px #66ccff;
+  width: 80%;
+  margin: auto;
+  padding: 5px;
+}
+table {
+  margin: auto;
+}
+
+tr:nth-child(odd)   { background-color:#75d1ff; }
+tr:nth-child(even)    { background-color:#86d6ff; }
+
+a {
+  color: black;
+}
+
+form {
+  margin:auto;
 }
 
 .navlist {
-  background-color: lightgrey;
+  background-color: #86d6ff;
 }
